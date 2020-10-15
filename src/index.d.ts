@@ -6,4 +6,4 @@ interface FetchResult {
     error: Error;
 }
 
-declare function onFetch(): FetchResult;
+declare function onFetch(fun: () => any): FetchResult;

@@ -3,7 +3,7 @@ import { reactive } from "@vue/composition-api";
 /**
  * Vue Composition function
  */
-export function onFetch() {
+export function onFetch(fun) {
     const $fetch = reactive({
         /**
          * If the fetch is loading.
@@ -33,29 +33,19 @@ export function onFetch() {
     });
 
     // Make sure the `fetch` option is present.
-    onMounted( async () => {
-        if (hasFetch(this)) {
-            this.$data.$fetch.loading = true;
+    onMounted(async () => {
+        this.$data.$fetch.loading = true;
     
-            // Attempt to call the fetch function
-            try {
-                await this.$options.fetch.call(this);
-            } catch (err) {
-                this.$data.$fetch.error = err;
-                this.$data.$fetch.error = err;
-            } finally {
-                this.$data.$fetch.loading = false;
-            }
+        // Attempt to call the fetch function
+        try {
+            await fun;
+        } catch (err) {
+            $fetch.error = err;
+            $fetch.error = err;
+        } finally {
+            $fetch.loading = false;
         }
     });
 
     return $fetch;
 };
-
-/**
- * Check if the `fetch` option is present inside the component.
- * @param vm Vue instance
- */
-function hasFetch(vm) {
-    return vm.$options && typeof vm.$options.fetch === "function";
-}
