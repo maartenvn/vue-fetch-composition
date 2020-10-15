@@ -6,6 +6,7 @@
     "browser": "dist/vue-fetch-composition.umd.js",
     "module": "dist/vue-fetch-composition.esm.js",
     "unpkg": "dist/vue-fetch-composition.min.js",
+    "types": "src/index.d.ts",
     "scripts": {
         "prebuild": "rimraf dist",
         "build": "rollup -c rollup.config.js",
