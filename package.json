@@ -1,0 +1,35 @@
+{
+    "name": "vue-fetch-composition",
+    "version": "0.0.1",
+    "description": "Composition function for easy data fetching in Vue using the composition API",
+    "main": "dist/vue-fetch-composition.cjs.js",
+    "browser": "dist/vue-fetch-composition.umd.js",
+    "module": "dist/vue-fetch-composition.esm.js",
+    "unpkg": "dist/vue-fetch-composition.min.js",
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "rollup -c rollup.config.js",
+        "test": "jest | true"
+    },
+    "repository": "git@github.com:maartenvn/vue-fetch-composition.git",
+    "author": "Maarten Van Neyghem",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@rollup/plugin-babel": "^5.2.1",
+        "@rollup/plugin-node-resolve": "^9.0.0",
+        "@vue/test-utils": "^1.1.0",
+        "babel-jest": "^26.3.0",
+        "flush-promises": "^1.0.2",
+        "jest": "^26.4.2",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.28.2",
+        "rollup-plugin-terser": "^7.0.2",
+        "vue": "^2.6.12",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@vue/composition-api": "^1.0.0-beta.16"
+    }
+}
