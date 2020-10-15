@@ -38,7 +38,7 @@ export function onFetch(fun) {
     
         // Attempt to call the fetch function
         try {
-            await fun;
+            await fun();
         } catch (err) {
             $fetch.error = err;
             $fetch.error = err;
