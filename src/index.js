@@ -34,7 +34,7 @@ export function onFetch(fun) {
 
     // Make sure the `fetch` option is present.
     onMounted(async () => {
-        this.$data.$fetch.loading = true;
+        $fetch.loading = true;
     
         // Attempt to call the fetch function
         try {
