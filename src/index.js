@@ -1,4 +1,4 @@
-import { reactive } from "vue-demi"
+import { reactive, onMounted } from "vue-demi"
 
 /**
  * Vue Composition function
