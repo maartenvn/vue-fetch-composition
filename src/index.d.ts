@@ -7,3 +7,5 @@ interface FetchResult {
 }
 
 declare function onFetch(fun: () => any): FetchResult;
+
+export { onFetch };
