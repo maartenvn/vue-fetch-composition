@@ -8,18 +8,18 @@ export function onFetch(fun) {
         /**
          * If the fetch is loading.
          */
-        isLoading: () => this.$data.$fetch.loading,
+        isLoading: () => $fetch.loading,
 
         /**
          * If the fetch has succeeded.
          */
         isSuccess: () =>
-            !this.$data.$fetch.loading && !this.$data.$fetch.error,
+            !$fetch.loading && !$fetch.error,
 
         /**
          * If the fetch has failed.
          */
-        isError: () => this.$data.$fetch.error !== null,
+        isError: () => $fetch.loading !== null,
 
         /**
          * If the fetch is loading.
