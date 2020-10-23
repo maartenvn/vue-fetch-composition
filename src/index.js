@@ -1,4 +1,4 @@
-import { reactive, onBeforeMounted } from "vue-demi";
+import { reactive, onBeforeMount } from "vue-demi";
 
 /**
  * Vue Composition function
@@ -32,7 +32,7 @@ export function onFetch(fun) {
     });
 
     // Make sure the `fetch` option is present.
-    onBeforeMounted(async () => {
+    onBeforeMount(async () => {
         $fetch.loading = true;
 
         // Attempt to call the fetch function
