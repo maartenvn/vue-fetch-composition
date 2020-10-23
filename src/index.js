@@ -1,4 +1,4 @@
-import { reactive, onMounted } from "vue-demi"
+import { reactive, onMounted } from "vue-demi";
 
 /**
  * Vue Composition function
@@ -13,8 +13,7 @@ export function onFetch(fun) {
         /**
          * If the fetch has succeeded.
          */
-        isSuccess: () =>
-            !$fetch.loading && !$fetch.error,
+        isSuccess: () => !$fetch.loading && !$fetch.error,
 
         /**
          * If the fetch has failed.
@@ -25,27 +24,23 @@ export function onFetch(fun) {
          * If the fetch is loading.
          */
         loading: false,
-    
+
         /**
          * Error when the fetch has failed.
          */
         error: null
     });
 
-    // Make sure the `fetch` option is present.
-    onMounted(async () => {
-        $fetch.loading = true;
-    
-        // Attempt to call the fetch function
-        try {
-            await fun();
-        } catch (err) {
-            $fetch.error = err;
-            $fetch.error = err;
-        } finally {
-            $fetch.loading = false;
-        }
-    });
+    $fetch.loading = true;
+
+    // Attempt to call the fetch function
+    try {
+        await fun();
+    } catch (err) {
+        $fetch.error = err;
+    } finally {
+        $fetch.loading = false;
+    }
 
     return $fetch;
-};
+}
