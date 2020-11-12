@@ -1,6 +1,6 @@
 {
     "name": "vue-fetch-composition",
-    "version": "0.0.13",
+    "version": "0.0.14",
     "description": "Composition function for easy data fetching in Vue using the composition API",
     "main": "dist/vue-fetch-composition.cjs.js",
     "browser": "dist/vue-fetch-composition.umd.js",
