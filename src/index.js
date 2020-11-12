@@ -36,7 +36,7 @@ export function useFetchState() {
  * Vue Composition function
  */
 export function onFetch(fun) {
-    const $fetch = useFetchStat();
+    const $fetch = useFetchState();
 
     // Make sure the `fetch` option is present.
     onBeforeMount(async () => {
