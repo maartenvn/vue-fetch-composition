@@ -6,6 +6,7 @@ interface FetchResult {
     error: Error;
 }
 
+declare function useFetchState(): FetchResult;
 declare function onFetch(fun: () => any): FetchResult;
 
-export { onFetch };
+export { useFetch, onFetch };

@@ -1,10 +1,10 @@
 import { reactive, onBeforeMount } from "vue-demi";
 
 /**
- * Vue Composition function
+ * Create an empty fetch state object.
  */
-export function onFetch(fun) {
-    const $fetch = reactive({
+export function useFetchState() {
+    reactive({
         /**
          * If the fetch is loading.
          */
@@ -30,6 +30,13 @@ export function onFetch(fun) {
          */
         error: null
     });
+}
+
+/**
+ * Vue Composition function
+ */
+export function onFetch(fun) {
+    const $fetch = useFetchStat();
 
     // Make sure the `fetch` option is present.
     onBeforeMount(async () => {
