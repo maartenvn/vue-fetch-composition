@@ -9,4 +9,4 @@ interface FetchResult {
 declare function useFetchState(): FetchResult;
 declare function onFetch(fun: () => any): FetchResult;
 
-export { useFetch, onFetch };
+export { useFetchState, onFetch };
