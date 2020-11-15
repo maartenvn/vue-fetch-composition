@@ -4,21 +4,21 @@ import { reactive, onBeforeMount } from "vue-demi";
  * Create an empty fetch state object.
  */
 export function useFetchState() {
-    return reactive({
+    const $state = reactive({
         /**
          * If the fetch is loading.
          */
-        isLoading: () => $fetch.loading,
+        isLoading: () => $state.loading,
 
         /**
          * If the fetch has succeeded.
          */
-        isSuccess: () => !$fetch.loading && !$fetch.error,
+        isSuccess: () => !$state.loading && !$state.error,
 
         /**
          * If the fetch has failed.
          */
-        isError: () => $fetch.loading !== null,
+        isError: () => $state.loading !== null,
 
         /**
          * If the fetch is loading.
@@ -30,6 +30,8 @@ export function useFetchState() {
          */
         error: null
     });
+
+    return $state;
 }
 
 /**
